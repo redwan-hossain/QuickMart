@@ -7,7 +7,6 @@ function loadChooseData() {
 }
 
 
-
 const loadAllProducts = () => {
     const url = "https://fakestoreapi.com/products";
     fetch(url)
@@ -19,7 +18,6 @@ const loadAllProducts = () => {
 
 
 // all display function here
-
 
 const displayChooseData = (chooseData) => {
 
@@ -54,7 +52,7 @@ const displayAllProduct = (allProduct) => {
     for (product of allProduct) {
         trendingCartContainer.innerHTML += `
        
-       <div class="trending-cart px-5 rounded outline outline-gray-400">
+       <div class="trending-cart px-5 rounded outline outline-gray-400 cursor-pointer">
 
                     <div class="bg-[#E5E7EB] flex justify-center items-center p-5">
                         <img class="mx-auto"
