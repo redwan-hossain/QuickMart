@@ -54,7 +54,6 @@ const displayAllProduct = (allProduct) => {
        
      <div class="trending-cart flex flex-col rounded-lg outline outline-gray-300 hover:shadow-lg transition duration-300 cursor-pointer bg-white">
 
-        <!-- Image Section -->
         <div class="bg-[#E5E7EB] flex justify-center items-center h-[250px] p-5 rounded-t-lg">
             <img class="max-h-full object-contain"
                 src="${product.image}"
