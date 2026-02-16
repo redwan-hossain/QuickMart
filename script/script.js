@@ -52,38 +52,54 @@ const displayAllProduct = (allProduct) => {
     for (product of allProduct) {
         trendingCartContainer.innerHTML += `
        
-       <div class="trending-cart px-5 rounded outline outline-gray-400 cursor-pointer">
+     <div class="trending-cart flex flex-col rounded-lg outline outline-gray-300 hover:shadow-lg transition duration-300 cursor-pointer bg-white">
 
-                    <div class="bg-[#E5E7EB] flex justify-center items-center p-5">
-                        <img class="mx-auto"
-                            src="${product.image}" alt="">
-                    </div>
+        <!-- Image Section -->
+        <div class="bg-[#E5E7EB] flex justify-center items-center h-[250px] p-5 rounded-t-lg">
+            <img class="max-h-full object-contain"
+                src="${product.image}"
+                alt="${product.title}">
+        </div>
 
-                    <div class="px-3 mt-3">
-                        <div class="flex justify-between">
-                            <span class="rounded-lg bg-[#E0E7FF] text-[#645DC2] px-2 font-bold">${product.category}</span>
+        <div class="flex flex-col flex-1 px-5 py-4">
 
-                            <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-star text-[#FDC701]"></i>
-                                <p>${product.rating.rate}</p>
-                                <span>(${product.rating.count})</span>
-                            </div>
+            <div class="flex justify-between items-center">
+                <span class="rounded-lg bg-[#E0E7FF] text-[#645DC2] px-3 py-1 text-sm font-semibold">
+                    ${product.category}
+                </span>
 
-                        </div>
-
-                        <div class="space-y-1 mt-2">
-                            <h1 class="text-lg font-semibold">${product.title}</h1>
-                            <span class="font-bold ">$${product.price}</span>
-                            <div class="btnDiv flex mt-3 gap-4 justify-between pb-[10px]">
-
-                                <button class="border px-5 py-1 rounded-md cursor-pointer"><i class="fa-regular fa-eye mx-2"></i>Details</button>
-                                <button class="border px-5 py-1 rounded-md cursor-pointer"><i class="fa-solid fa-cart-shopping mx-2"></i>add</button>
-                               
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="flex items-center gap-1 text-sm">
+                    <i class="fa-solid fa-star text-[#FDC701]"></i>
+                    <p>${product.rating.rate}</p>
+                    <span class="text-gray-500">(${product.rating.count})</span>
                 </div>
+            </div>
+
+
+            <div class="mt-3 flex flex-col flex-1">
+                <h1 class="text-md font-semibold line-clamp-2">
+                    ${product.title}
+                </h1>
+
+                <span class="font-bold text-lg mt-2">
+                    $${product.price}
+                </span>
+
+
+                <div class="flex gap-4 mt-auto pt-4">
+                    <button class="flex-1 border py-2 rounded-md hover:bg-gray-100 transition cursor-pointer">
+                        <i class="fa-regular fa-eye mr-2"></i>Details
+                    </button>
+
+                    <button class="flex-1 border py-2 rounded-md hover:bg-gray-100 transition cursor-pointer">
+                        <i class="fa-solid fa-cart-shopping mr-2"></i>Add
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
        
        `
     }
